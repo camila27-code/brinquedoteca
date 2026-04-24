@@ -1,19 +1,20 @@
 from pydantic import BaseModel
+from datetime import date
+from enum import Enum
 
 
-class EmprestimosCreate(BaseModel):
-     id: int
-     crianca_id: int
-     brinquedo_id: int
-     datas: str
-     status: str
-     multa: int
-    
+class EmprestimoCreate(BaseModel):
+    crianca_id: int
+    brinquedo_id: int
+    data_inicio: date
+    data_fim: date
 
-class EmprestimosOut(BaseModel):
-     id: int
-     crianca_id: int
-     brinquedo_id: int
-     datas: str
-     status: str
-     multa: int
+class EmprestimoOut(BaseModel):
+    id: int
+    crianca_id: int
+    brinquedo_id: int
+    data_inicio: date
+    data_fim: date
+    data_entrega: date | None
+    status: str
+    multa: float
