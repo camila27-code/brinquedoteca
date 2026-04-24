@@ -6,3 +6,5 @@ class Crianca:
     nome: str
     idade: int
     responsavel: str
+    bloqueado: bool = False
+    atrasos: int = 0
